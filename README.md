@@ -1,6 +1,14 @@
 # GithubFinder
 
-Fyle Frontend Internship Challenge
+## Fyle Frontend Internship Challenge
+
+### Techstack used: 
+
+- Angular 13.x
+- Libraries - Angular Material, ngxPagination
+- CSS framework - Tailwind
+
+<hr>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
