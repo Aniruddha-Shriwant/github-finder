@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { GithubService } from '../service/github.service';
 
 @Component({
@@ -36,6 +36,13 @@ export class UserReposComponent implements OnChanges {
       });
   }
 
+  handlePageChange(p: any) {
+    this.reset();
+    this.fetchingRepos = true;
+    this.currentPage = p;
+    this.fetchRepos();
+  }
+
   ngOnChanges(): void {
     if (this.totalRepos > 0) {
       this.fetchRepos();
@@ -45,6 +52,4 @@ export class UserReposComponent implements OnChanges {
   reset() {
     this.userRepos = null;
   }
-
-  ngOnInit(): void {}
 }
