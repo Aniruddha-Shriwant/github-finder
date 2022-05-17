@@ -1,0 +1,11 @@
+<form [formGroup]="userSeacrhForm" (ngSubmit)="onUserSubmit()" class="flex flex-row">
+
+  <fa-icon size="2x" [icon]="faGithub" class="mt-1"></fa-icon>
+
+  <input type="text" placeholder="Search Github Username" formControlName="username" required class="mx-4 p-2 border border-gray-200 outline-none grow" />
+
+  <button type="submit" [disabled]="userSeacrhForm.invalid" class="p-2 bg-sky-600 hover:bg-sky-700 text-white disabled:bg-gray-400">
+    Search
+  </button>
+
+</form>
