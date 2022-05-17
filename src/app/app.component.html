@@ -1,1 +1,9 @@
-<h3>Hello World</h3>
+<div class="flex min-h-screen flex-col gap-8 p-4 font-mono text-xs sm:p-6 sm:text-base">
+
+  <app-user-search (onUserSearch)="userSearchHandler($event)"></app-user-search>
+
+  <div *ngIf="username !== ''">
+    <app-user-details [username]="username"></app-user-details>
+  </div>
+
+</div>
