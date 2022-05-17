@@ -13,9 +13,10 @@ import { UserSearchComponent } from './user-search/user-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
-  declarations: [AppComponent, UserSearchComponent, UserDetailsComponent],
+  declarations: [AppComponent, UserSearchComponent, UserDetailsComponent, LoaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

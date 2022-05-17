@@ -1,8 +1,5 @@
 <div *ngIf="fetchingInfo">
-  <div>
-    <mat-spinner [diameter]="50"></mat-spinner>
-  </div>
-
+  <app-loader [text]="'Loading User Details'"></app-loader>
 </div>
 
 <div *ngIf="userInfo">

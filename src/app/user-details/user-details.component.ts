@@ -6,6 +6,7 @@ import {
   faLocationDot,
   faEnvelope,
   faLink,
+  faL,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -26,7 +27,6 @@ export class UserDetailsComponent implements OnChanges {
 
   mailUrl = 'mailto:';
   twtUrl = 'https://twitter.com/';
-  blogUrl = 'https://';
 
   userInfo: any = null;
   fetchingInfo: boolean = true;
@@ -42,11 +42,18 @@ export class UserDetailsComponent implements OnChanges {
   }
 
   fetchUserInfo() {
-    this.fetchingInfo = false;
     this.reset();
+    this.fetchingInfo = false;
 
-    this.GithubService.getUserDetails(this.username).subscribe(
-      (res) => (this.userInfo = res)
-    );
+    this.GithubService.getUserDetails(this.username).subscribe({
+      next: (res) => {
+        this.userInfo = res;
+        this.fetchingInfo = false;
+      },
+      error: (err) => {
+        this.userInfo = null;
+        this.fetchingInfo = false;
+      },
+    });
   }
 }
