@@ -1,0 +1,11 @@
+<div *ngIf="fetchingRepos" class="mt-4">
+  <app-loader [text]="'Loading Repos...'"></app-loader>
+</div>
+
+<div *ngIf="userRepos && totalRepos > 0">
+
+  <div class="mt-4 flex flex-col md:grid md:grid-cols-2 gap-4">
+    <app-user-repo *ngFor="let repo of userRepos.items" [repo]="repo"></app-user-repo>
+  </div>
+
+</div>

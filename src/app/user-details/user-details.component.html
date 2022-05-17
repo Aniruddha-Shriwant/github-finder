@@ -55,3 +55,5 @@
 <div *ngIf="!userInfo && !fetchingInfo">
   <!-- Todo : Handle Error by snackbar / ErrorService -->
 </div>
+
+<app-user-repos [totalRepos]="userInfo.public_repos" [username]="username"></app-user-repos>
