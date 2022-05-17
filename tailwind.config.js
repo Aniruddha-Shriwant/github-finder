@@ -1,7 +1,7 @@
 module.exports = {
-  content : [ "./src/**/*.{html,ts}" ],
-  theme : {
-    extend : {},
+  content: ["./src/**/*.{html,ts}"],
+  theme: {
+    extend: {},
   },
-  plugins : [],
+  plugins: [],
 };
