@@ -33,14 +33,6 @@ export class UserDetailsComponent implements OnChanges {
 
   constructor(private GithubService: GithubService) {}
 
-  ngOnChanges(): void {
-    this.fetchUserInfo();
-  }
-
-  reset() {
-    this.userInfo = null;
-  }
-
   fetchUserInfo() {
     this.reset();
     this.fetchingInfo = false;
@@ -55,5 +47,13 @@ export class UserDetailsComponent implements OnChanges {
         this.fetchingInfo = false;
       },
     });
+  }
+
+  reset() {
+    this.userInfo = null;
+  }
+
+  ngOnChanges(): void {
+    this.fetchUserInfo();
   }
 }
