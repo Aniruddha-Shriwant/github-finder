@@ -14,6 +14,8 @@ export class GithubService {
   constructor(private http: HttpClient) {}
 
   getUserDetails(username: any) {
-    return this.http.get(`${BASE_URL}/users/${username}`);
+    return this.http.get(`${BASE_URL}/users/${username}`, {
+      headers: this.headers,
+    });
   }
 }

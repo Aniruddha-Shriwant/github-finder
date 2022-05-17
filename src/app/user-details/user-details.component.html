@@ -7,11 +7,54 @@
 
 <div *ngIf="userInfo">
 
-  <p>{{userInfo | json}}</p>
+  <div class="profile">
 
+    <mat-card class="profile-card">
+
+      <div class="flex flex-col items-center mb-3">
+        <img class="h-[150px] w-[150px] rounded-[50%]" mat-card-lg-image [src]="userInfo.avatar_url">
+      </div>
+
+      <mat-card-title style="font-size: 28px; font-weight: 500;">{{userInfo.name}}</mat-card-title>
+
+      <div *ngIf="userInfo.bio">
+        <mat-card-subtitle>{{userInfo.bio}}</mat-card-subtitle>
+      </div>
+
+      <div *ngIf="userInfo.location">
+        <mat-card-content style="font-size: 18px;">
+          <fa-icon [icon]="locationIcon"></fa-icon>
+          {{userInfo.location}}
+        </mat-card-content>
+      </div>
+
+      <mat-card-actions class="social-links">
+        <div class="flex flex-row justify-center gap-8">
+          <a [href]="userInfo.html_url">
+            <fa-icon size="2x" [icon]="ghIcon"></fa-icon>
+          </a>
+          <div *ngIf="userInfo.email">
+            <a [href]="mailUrl + userInfo.email">
+              <fa-icon size="2x" [icon]="emailIcon"></fa-icon>
+            </a>
+          </div>
+          <div *ngIf="userInfo.blog">
+            <a [href]="userInfo.blog">
+              <fa-icon size="2x" [icon]="blogIcon"></fa-icon>
+            </a>
+          </div>
+          <div *ngIf="userInfo.twitter_username">
+            <a [href]="twtUrl + userInfo.twitter_username">
+              <fa-icon size="2x" [icon]="twtIcon"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
 </div>
 
 <div *ngIf="!userInfo && !fetchingInfo">
-
-
+  <!-- Todo : Handle Error by snackbar / ErrorService -->
 </div>
