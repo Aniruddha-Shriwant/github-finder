@@ -37,14 +37,13 @@ export class UserReposComponent implements OnChanges {
   }
 
   handlePageChange(p: any) {
-    this.reset();
-    this.fetchingRepos = true;
     this.currentPage = p;
     this.fetchRepos();
   }
 
   ngOnChanges(): void {
     if (this.totalRepos > 0) {
+      this.currentPage = 1;
       this.fetchRepos();
     }
   }
