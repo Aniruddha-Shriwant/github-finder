@@ -10,7 +10,7 @@
 
   <div class="mt-5 flex justify-center">
     <ul>
-      <li *ngFor="let repo of userRepos.items | paginate: { itemsPerPage: maxPerPage, currentPage: currentPage, totalItems: userRepos.total_count }"></li>
+      <li *ngFor="let repo of userRepos.items | paginate: { itemsPerPage: maxPerPage, currentPage: currentPage, totalItems: maxRepoLimiter() }"></li>
     </ul>
 
     <pagination-controls (pageChange)="handlePageChange($event)" previousLabel="Older" nextLabel="Newer" [responsive]="true"></pagination-controls>
