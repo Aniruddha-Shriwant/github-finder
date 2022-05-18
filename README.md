@@ -8,6 +8,9 @@
 - Libraries - Angular Material, ngxPagination
 - CSS framework - Tailwind
 
+#### Running locally 
+- Create a environment.testing.ts file in the environments directory, And export your Github personal access token from inside of it.
+
 <hr>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
