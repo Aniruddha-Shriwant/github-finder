@@ -28,7 +28,7 @@ export class UserDetailsComponent implements OnChanges {
   twtUrl = 'https://twitter.com/';
 
   userInfo: any = null;
-  fetchingInfo: boolean = true;
+  fetchingInfo: boolean = false;
 
   // Injecting the Github Service
   constructor(private GithubService: GithubService) {}
@@ -36,7 +36,7 @@ export class UserDetailsComponent implements OnChanges {
   // Fetching the userInfo
   fetchUserInfo() {
     this.reset();
-    this.fetchingInfo = false;
+    this.fetchingInfo = true;
 
     this.GithubService.getUserDetails(this.username).subscribe({
       next: (res) => {
