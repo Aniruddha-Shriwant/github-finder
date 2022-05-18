@@ -22,7 +22,6 @@ export class UserReposComponent implements OnChanges {
   constructor(private githubService: GithubService) {}
 
   fetchRepos() {
-    console.log(this.totalRepos);
     this.reset();
     this.fetchingRepos = true;
 
@@ -54,5 +53,12 @@ export class UserReposComponent implements OnChanges {
 
   reset() {
     this.userRepos = null;
+  }
+
+  maxRepoLimiter(): number {
+    if (this.userRepos.total_count! > 1000) {
+      return (this.userRepos.total_count = 1000);
+    }
+    return this.userRepos.total_count;
   }
 }
