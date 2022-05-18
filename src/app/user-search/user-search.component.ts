@@ -23,8 +23,5 @@ export class UserSearchComponent implements OnInit {
   onUserSubmit() {
     this.onUserSearch.emit(this.userSeacrhForm.value.username);
     this.userSeacrhForm.reset();
-    // this.username = '';
-
-    // console.log(username);
   }
 }

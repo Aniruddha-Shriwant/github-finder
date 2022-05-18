@@ -1,7 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { GithubService } from '../service/github.service';
-
-import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-repos',
@@ -12,7 +11,7 @@ export class UserReposComponent implements OnChanges {
   @Input() totalRepos!: number;
   @Input() username!: string;
 
-  errorIcon = faCircleExclamation;
+  errorIcon = faExclamation;
 
   userRepos: any = null;
   fetchingRepos: boolean = false;

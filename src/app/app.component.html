@@ -1,6 +1,6 @@
 <div class="flex min-h-screen flex-col gap-8 p-4 font-mono text-xs sm:p-6 sm:text-base">
 
-  <app-user-search (onUserSearch)="userSearchHandler($event)"></app-user-search>
+  <app-user-search (onUserSearch)="userSearchHandler($event)" class="w-6/7 flex justify-center"></app-user-search>
 
   <div *ngIf="username !== ''">
     <app-user-details [username]="username"></app-user-details>
