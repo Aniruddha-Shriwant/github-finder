@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 const BASE_URL = 'https://api.github.com';
 
@@ -11,7 +12,7 @@ export class GithubService {
   // Auth token to increase the number of request we can make per hour
   // Explicitly requesting v3 version of the REST API
   headers: HttpHeaders = new HttpHeaders({
-    Authorization: `token ${'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'}`,
+    Authorization: `token ${environment.MY_SECRET_TOKEN}`,
     Accept: 'application/vnd.github.v3+json',
   });
   constructor(private http: HttpClient) {}
