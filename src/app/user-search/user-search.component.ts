@@ -8,6 +8,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./user-search.component.css'],
 })
 export class UserSearchComponent implements OnInit {
+  // To allow data (username) to flow from the child class(user-search) to the parent class(main app)
   @Output() onUserSearch: EventEmitter<any> = new EventEmitter();
 
   faGithub = faGithub;

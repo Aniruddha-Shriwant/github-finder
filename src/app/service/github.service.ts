@@ -8,6 +8,8 @@ const BASE_URL = 'https://api.github.com';
   providedIn: 'root',
 })
 export class GithubService {
+  // Auth token to increase the number of request we can make per hour
+  // Explicitly requesting v3 version of the REST API
   headers: HttpHeaders = new HttpHeaders({
     Authorization: `token ${'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'}`,
     Accept: 'application/vnd.github.v3+json',

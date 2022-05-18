@@ -15,6 +15,7 @@ import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./user-details.component.css'],
 })
 export class UserDetailsComponent implements OnChanges {
+  // Takes an username as input given by user-search component
   @Input() username!: string;
 
   locationIcon = faLocationDot;
@@ -29,8 +30,10 @@ export class UserDetailsComponent implements OnChanges {
   userInfo: any = null;
   fetchingInfo: boolean = true;
 
+  // Injecting the Github Service
   constructor(private GithubService: GithubService) {}
 
+  // Fetching the userInfo
   fetchUserInfo() {
     this.reset();
     this.fetchingInfo = false;
@@ -51,6 +54,7 @@ export class UserDetailsComponent implements OnChanges {
     this.userInfo = null;
   }
 
+  // To refetch the profile if new username is entered in search component
   ngOnChanges(): void {
     this.fetchUserInfo();
   }
