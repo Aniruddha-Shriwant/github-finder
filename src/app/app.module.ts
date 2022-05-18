@@ -14,7 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoaderComponent } from './loader/loader.component';
 import { UserReposComponent } from './user-repos/user-repos.component';
 import { UserRepoComponent } from './user-repo/user-repo.component';
-import { ErrorService } from './service/error.service';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { ErrorService } from './service/error.service';
     LoaderComponent,
     UserReposComponent,
     UserRepoComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,7 @@ import { ErrorService } from './service/error.service';
     FontAwesomeModule,
     NgxPaginationModule,
   ],
-  providers: [GithubService, ErrorService],
+  providers: [GithubService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

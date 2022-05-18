@@ -19,8 +19,5 @@
 </div>
 
 <div *ngIf="!userRepos?.total_count && !fetchingRepos">
-  <div class="mt-4 flex flex-row justify-center items-center content-center gap-4">
-    <fa-icon [icon]="errorIcon"></fa-icon>
-    <span class="text-lg text-gray-700">No repos available :/</span>
-  </div>
+  <app-error [error]="'No repos available :/'"></app-error>
 </div>

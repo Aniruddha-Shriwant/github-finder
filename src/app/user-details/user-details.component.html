@@ -56,5 +56,5 @@
 </div>
 
 <div *ngIf="!userInfo && !fetchingInfo">
-  <!-- Todo : Handle Error by snackbar / ErrorService -->
+  <app-error [error]="'Userprofile not found :/'"></app-error>
 </div>

@@ -8,7 +8,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { ErrorService } from '../service/error.service';
 
 @Component({
   selector: 'app-user-details',
@@ -30,10 +29,7 @@ export class UserDetailsComponent implements OnChanges {
   userInfo: any = null;
   fetchingInfo: boolean = true;
 
-  constructor(
-    private GithubService: GithubService,
-    private errService: ErrorService
-  ) {}
+  constructor(private GithubService: GithubService) {}
 
   fetchUserInfo() {
     this.reset();
@@ -47,7 +43,6 @@ export class UserDetailsComponent implements OnChanges {
       error: (err) => {
         this.userInfo = null;
         this.fetchingInfo = false;
-        this.errService.openSnackBar('Profile not found');
       },
     });
   }
