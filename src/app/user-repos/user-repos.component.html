@@ -8,16 +8,22 @@
     <app-user-repo *ngFor="let repo of userRepos.items" [repo]="repo"></app-user-repo>
   </div>
 
+  <div class="mt-5 flex justify-center">
+    <ul>
+      <li *ngFor="let repo of userRepos.items | paginate: { itemsPerPage: maxPerPage, currentPage: currentPage, totalItems: userRepos.total_count }"></li>
+    </ul>
+
+    <pagination-controls (pageChange)="handlePageChange($event)" previousLabel="Older" nextLabel="Newer"></pagination-controls>
+  </div>
+
 </div>
 
-<div class="mt-5 flex justify-center">
-  <ul>
-    <li *ngFor="let repo of userRepos.items | paginate: { itemsPerPage: maxPerPage, currentPage: currentPage, totalItems: userRepos.total_count }"></li>
-  </ul>
 
-  <pagination-controls (pageChange)="handlePageChange($event)" previousLabel="Older" nextLabel="Newer"></pagination-controls>
-</div>
 
 <div *ngIf="!userRepos?.total_count && !fetchingRepos">
   <!-- Todo : Handle Error by snackbar / ErrorService -->
+  <div class="mt-4 flex flex-row justify-center content-center gap-4">
+    <fa-icon size="2x" [icon]="errorIcon"></fa-icon>
+    <h2>The user doesn't have any public repositories !</h2>
+  </div>
 </div>
