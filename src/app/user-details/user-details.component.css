@@ -1,15 +1,8 @@
-.profile {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
+.content {
+  margin-bottom: 8px !important;
 }
 
-.profile-card {
-  min-width: 600px;
-  max-width: 600px;
-  text-align: center;
-  justify-content: center;
+.card {
   box-shadow: none !important;
 }
 

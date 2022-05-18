@@ -4,7 +4,7 @@
 
 <div *ngIf="userRepos && userRepos.total_count > 0">
 
-  <div class="mt-4 flex flex-col md:grid md:grid-cols-2 gap-4">
+  <div class="flex flex-col md:grid md:grid-cols-2 gap-4">
     <app-user-repo *ngFor="let repo of userRepos.items" [repo]="repo"></app-user-repo>
   </div>
 
@@ -13,17 +13,14 @@
       <li *ngFor="let repo of userRepos.items | paginate: { itemsPerPage: maxPerPage, currentPage: currentPage, totalItems: userRepos.total_count }"></li>
     </ul>
 
-    <pagination-controls (pageChange)="handlePageChange($event)" previousLabel="Older" nextLabel="Newer"></pagination-controls>
+    <pagination-controls (pageChange)="handlePageChange($event)" previousLabel="Older" nextLabel="Newer" [responsive]="true"></pagination-controls>
   </div>
 
 </div>
 
-
-
 <div *ngIf="!userRepos?.total_count && !fetchingRepos">
-  <!-- Todo : Handle Error by snackbar / ErrorService -->
-  <div class="mt-4 flex flex-row justify-center content-center gap-4">
-    <fa-icon size="2x" [icon]="errorIcon"></fa-icon>
-    <h2>The user doesn't have any public repositories !</h2>
+  <div class="mt-4 flex flex-row justify-center items-center content-center gap-4">
+    <fa-icon [icon]="errorIcon"></fa-icon>
+    <span class="text-lg text-gray-700">No repos available :/</span>
   </div>
 </div>

@@ -5,7 +5,6 @@ import {
   faLocationDot,
   faEnvelope,
   faLink,
-  faL,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';

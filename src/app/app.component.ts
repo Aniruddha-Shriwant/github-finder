@@ -11,6 +11,5 @@ export class AppComponent {
 
   userSearchHandler(username: string) {
     this.username = username;
-    console.log(username);
   }
 }
